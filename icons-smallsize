@@ -1,0 +1,4 @@
+$path = "HKCU:\SOFTWARE\Microsoft\Windows\Shell\Bags\1\Desktop"
+Set-ItemProperty -Path $path -Name IconSize -Value 36
+
+Stop-Process -name explorer
