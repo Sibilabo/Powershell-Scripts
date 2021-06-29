@@ -1,0 +1,10 @@
+# This script removing lockscreen, you'll see only login screen. You propably have to run it as administrator.
+
+$path1 = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows'
+if (Test-Path -Path $path1 ) {
+New-Item -Path $path1 -Name Personalization 
+}
+
+$path2 = 'HKLM:\SOFTWARE\Policies\Microsoft\Windows\Personalization'
+
+New-ItemProperty -Path $path2 -Name NoLockScreen -PropertyType DWORD -Value 1
